@@ -1,0 +1,14 @@
+.error-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    font-size: 1.7rem;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+[web-theme="dark"] .error-msg {
+    background-color: rgb(45,45,45);
+    color: skyblue;
+}

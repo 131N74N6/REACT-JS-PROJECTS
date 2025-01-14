@@ -1,0 +1,84 @@
+.header {
+    padding: 1.05rem;
+    font-family: Arial;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: 0 0 6px rgb(40,40,40);
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.header #dark-setter {
+    display: none;
+}
+
+.header a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.header label[for='dark-setter'] i {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.header form {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.header form input[name="search"] {
+    padding: 0.45rem;
+    font-size: 1rem;
+    font-family: Arial;
+    outline: none;
+    border-radius: 0.45rem;
+    border: 1px solid black;
+}
+
+.header form button[type="submit"] {
+    border-radius: 0.45rem;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.45rem;
+    font-size: 1rem;
+    font-family: Arial;
+}
+
+
+[web-theme="dark"] .header {
+    background-color: rgb(36, 36, 36);
+    box-shadow: 0 0 6px skyblue, 0 0 8px deepskyblue;
+    color: skyblue;
+}
+
+
+[web-theme="dark"] .header form input[name="search"] {
+    padding: 0.45rem;
+    font-size: 1rem;
+    background-color: transparent;
+    font-family: Arial;
+    outline: none;
+    border-radius: 0.45rem;
+    color: skyblue;
+    border: 1px solid skyblue;
+}
+
+
+[web-theme="dark"] .header form input[name="search"]::placeholder {
+    color: skyblue;
+}
+
+
+[web-theme="dark"] .header form button[type="submit"] {
+    background-color: skyblue;
+    color: black;
+}

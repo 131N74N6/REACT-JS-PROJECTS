@@ -1,0 +1,65 @@
+input#toggle-theme {
+    display: none;
+}
+
+label[for="toggle-theme"] {
+    cursor: pointer;
+    width: 53px;
+    height: 25px;
+    border: 1px solid black;
+    position: relative;
+    background-color: white;
+    display: block;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+label[for="toggle-theme"]::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-color: rgb(202, 136, 55);
+    position: absolute;
+    top: 1px;
+    left: 0;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+input#toggle-theme:checked + label[for="toggle-theme"] {
+    border: 1px solid skyblue;
+    background-color: rgb(56,56,56);
+}
+
+input#toggle-theme:checked + label[for="toggle-theme"]::after {
+    left: 29px;
+    background-color: darkblue;
+}
+
+
+label[for="toggle-theme"] i {
+    position: absolute;
+    font-size: 1rem;
+    top: 4.5px;
+    z-index: 100;
+}
+
+label[for="toggle-theme"] i.fa-sun {
+    left: 4px;
+    color: white;
+    transition: 0.3s;
+}
+
+label[for="toggle-theme"] i.fa-moon {
+    left: 34px;
+    color: black;
+    transition: 0.3s;
+}
+
+input#toggle-theme:checked + label[for="toggle-theme"] i.fa-sun {
+    color: gray;
+}
+
+input#toggle-theme:checked + label[for="toggle-theme"] i.fa-moon {
+    color: white;
+}

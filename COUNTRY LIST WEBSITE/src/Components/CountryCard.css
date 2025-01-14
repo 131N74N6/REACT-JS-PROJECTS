@@ -1,0 +1,28 @@
+.country-card {
+    box-shadow: 0 0 6px rgb(40,40,40);
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-family: Arial;
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+.country-card .flag-fit {
+    width: 255px;
+    height: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.country-card .flag-fit img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+[web-theme="dark"] .country-card {
+    box-shadow: 0 0 4px skyblue, 0 0 6px deepskyblue;
+    color: skyblue;
+}

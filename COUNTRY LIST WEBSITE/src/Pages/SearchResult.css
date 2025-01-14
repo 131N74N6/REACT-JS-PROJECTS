@@ -1,0 +1,25 @@
+.result-wrap {
+    min-height: 100dvh;
+    padding: 1.1rem;
+}
+
+.result-wrap .result-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 100dvh;
+    align-items: center;
+    gap: 1.3rem;
+}
+
+.result-wrap .indicator {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Arial;
+    padding: 0 0 1.3rem 0;
+}
+
+[web-theme="dark"] .result-wrap {
+    color: skyblue;
+    background-color: rgb(45,45,45);
+}

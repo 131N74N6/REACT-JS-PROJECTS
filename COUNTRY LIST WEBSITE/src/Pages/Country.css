@@ -1,0 +1,42 @@
+.all-countries {
+    padding: 1.3rem;
+}
+
+.all-countries .filter {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 1.2rem 0;
+}
+
+.all-countries .filter select {
+    padding: 0.5rem;
+    outline: none;
+    font-size: 1.1rem;
+    border: 1px solid black;
+}
+
+.all-countries .all-countries-wrap {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-countries .all-countries-wrap .all-countries-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+}
+
+[web-theme="dark"] .all-countries {
+    background-color: rgb(45,45,45);
+    color: skyblue;
+}
+
+[web-theme="dark"] .all-countries .filter select {
+    color: skyblue;
+    border: 1px solid skyblue;
+    background-color: rgb(45,45,45);
+}
