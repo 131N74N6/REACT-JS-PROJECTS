@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+}
+
+.tic-tac-toe-body {
+    background-color: rgb(4, 4, 48);
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-board {
+    padding: 1rem;
+    display:grid;
+    grid-template-columns: repeat(3, 0.3fr);
+    grid-template-rows: repeat(3, 0.3fr);
+    width: 380px;
+    height: 380px;
+    position: relative;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    font-family: Tahoma;
+    align-items: center;
+    font-size: 2rem;
+    background: linear-gradient(to left, rgba(206, 206, 255, 0.6), rgba(206, 206, 255, 0.974));
+    cursor: pointer;
+    padding: 4px;
+}
+
+.x:hover::after {
+    opacity: 0.4;
+    content: "X";
+}
+
+.o:hover::after {
+    opacity: 0.4;
+    content: "O";
+}
+
+.strike {
+    position: absolute;
+    background-color: orange;
+}
+
+.strike-row-1, .strike-row-2, .strike-row-3 {
+    height: 4px;
+    width: 90%;
+} 
+
+.strike-col-1, .strike-col-2, .strike-col-3 {
+    height: 90%;
+    width: 4px;
+}
+
+.strike-row-1 {
+    top: 17%;
+}
+
+.strike-row-2 {
+    top: 44%;
+}
+
+.strike-row-3 {
+    top: 71%;
+}
+
+.strike-col-1 {
+    left: 17%;
+}
+
+.strike-col-2 {
+    left: 44%;
+}
+
+.strike-col-3 {
+    left: 71%;
+}
+
+.strike-diagonal-1 {
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(45deg);
+}
+
+.strike-diagonal-2 {
+    width: 90%;
+    height: 4px;
+    top: 40%;
+    left: 4%;
+    transform: skewY(-45deg);
+}
+
+.game-over {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+}
+
+button.reset {
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(to left, rgba(206, 206, 255, 0.6), rgba(206, 206, 255, 0.974));
+    padding: 0.5rem;
+    color: rgb(4, 4, 48);
+    font-size: 1.4rem;
+    border-radius: 0.8rem;
+    font-family: monospace;
+    border: none;
+    width: 135px;
+}
