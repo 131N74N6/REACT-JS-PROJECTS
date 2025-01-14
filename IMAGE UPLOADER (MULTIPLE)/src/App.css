@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family: Tahoma;
+    transition: 0.5s;
+}
+
+.control-panel-uploader,.upload-option {
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.multiple-upload .control-panel-uploader .button,
+.multiple-upload form .upload-option .button {
+    font-size: 1rem;
+    font-family: Calibri;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(to right, rgb(0, 0, 89), rgb(70, 11, 173));
+    color: white;
+    padding: 0.55rem;
+    border-radius: 1rem;
+}
+
+.upload-sign-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-sign-wrap .upload-sign {
+    cursor: pointer;
+    padding: 0.8rem;
+    color: darkblue;
+    text-align: center;
+    border: 1px dashed darkblue;
+    width: 200px;
+}
+
+.upload-sign .upload-icon {
+    font-size: 2rem;
+}
+
+.show-img .message {
+    padding: 1rem;
+}
+
+.show-img {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.img-size {
+    width: 150px;
+    height: 150px;
+}
+
+.img-size img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shown {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shown .shown-content {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px;
+}
+
+.shown .shown-content .uploaded-img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.shown .shown-content .uploaded-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+}
+
+.shown .shown-content .uploaded-img:hover img {
+    filter: brightness(40%);
+}
+
+.shown .shown-content .uploaded-img button {
+    cursor: pointer;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    transition: 0.5s ease-in-out;
+    z-index: 100;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    color: aqua;
+}
+
+.shown .shown-content .uploaded-img:hover button {
+    transform: translateY(-200px);
+    cursor: pointer;
+    z-index: 100;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    color: aqua;
+}
+
+/*for mobile*/
+@media (max-width:452px) {
+    .shown .shown-content .uploaded-img {
+        width: 142px;
+        height: 142px;
+    }
+    
+    .shown .shown-content .uploaded-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+[page-theme="dark"] {
+    background-color: rgb(20,20,20);
+    color: yellow;
+}
+
+[page-theme="dark"] .upload-sign-wrap .upload-sign {
+    color: yellow;
+    border: 1px dashed yellow;
+}
