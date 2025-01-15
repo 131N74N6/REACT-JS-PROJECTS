@@ -1,0 +1,14 @@
+[page-theme="light"] {
+    margin: 0;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/004/141/314/original/blue-sky-wallpaper-clear-air-heavenly-background-illustration-vector.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+}
+
+[page-theme="dark"] {
+    background-image: url(https://c.stocksy.com/a/sWJB00/z9/2696682.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+}

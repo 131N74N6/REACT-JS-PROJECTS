@@ -1,0 +1,49 @@
+.current-loc-info {
+    min-height: 100dvh;
+    color: white;
+}
+
+.weather-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-loc-info .current-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.location-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: midnightblue;
+}
+
+.title {
+    color: midnightblue;
+    font-size: 1.5rem;
+}
+
+.forecast-card, .current-card {
+    border: 1.5px solid midnightblue;
+    border-radius: 1rem;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.weather-icon {
+    font-size: 3rem;
+}
+
+[page-theme="dark"] .location-name {
+    color: white;
+}
+
+[page-theme="dark"] .title {
+    color: white;
+}
+
+[page-theme="dark"] .forecast-card, [page-theme="dark"] .current-card {
+    border: 1.5px solid white;
+}

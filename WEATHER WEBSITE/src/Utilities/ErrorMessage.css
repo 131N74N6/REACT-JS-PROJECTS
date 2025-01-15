@@ -1,0 +1,26 @@
+.error-wrap {
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.error-wrap .error-content {
+    width: 320px;
+    height: 340px;
+    background-color: rgba(0,0,0,0.4);
+    border: 1.5px solid black;
+    padding: 1rem;
+}
+
+.error-img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+[web-theme="dark"] .error-wrap .error-content {
+    border: 1.5px solid white;
+}

@@ -1,0 +1,46 @@
+.app-header .set-city {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    align-items: center;
+}
+
+.app-header .set-city .city-name {
+    background-color: white;
+    color: black;
+    padding: 0.7rem;
+    font-size: 1.1rem;
+    outline: none;
+    border-radius: 1rem;
+    border: 1.5px solid black;
+}
+
+.app-header .set-city a {
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+[page-theme="dark"] .set-city .city-name::placeholder {
+    color: white;
+}
+
+.app-header .set-city .get-weather-data {
+    background-color: midnightblue;
+    color: white;
+    border: 1.5px solid black;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+[page-theme="dark"] .set-city .city-name, 
+[page-theme="dark"] .set-city .get-weather-data  {
+    background-color: transparent;
+    color: white;
+    border: 1.5px solid white;
+}

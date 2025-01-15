@@ -1,0 +1,33 @@
+input#theme-changer {
+    display: none;
+}
+
+label[for="theme-changer"] {
+    width: 55px;
+    height: 24px;
+    border-radius: 22px;
+    position: relative;
+    border: 1px solid midnightblue;
+    cursor: pointer;
+}
+
+label[for="theme-changer"]::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color: darkblue;
+    top: 3px;
+    left: 3px;
+    transition: 0.3s;
+}
+
+input#theme-changer:checked + label[for="theme-changer"] {
+    border: 1px solid aqua;
+}
+
+input#theme-changer:checked + label[for="theme-changer"]::after {
+    left: 33px;
+    background-color: aqua;
+}
