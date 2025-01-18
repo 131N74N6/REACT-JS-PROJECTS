@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(224, 224, 224);
+    margin: 0;
+}
+
+.v4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    min-height: 100dvh;
+}
+
+.v4 .v4-body {
+    width: 76dvw;
+    background-color: white;
+    min-height: 90dvh;
+    padding: 1rem;
+    font-family: Arial;
+}
+
+.v4 .v4-body form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.v4 .v4-body form input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid rgb(111, 108, 108);
+}
+
+.v4 .v4-body form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: rgb(26, 118, 55);
+    color: white;
+    border: none;
+    cursor: pointer;
+}

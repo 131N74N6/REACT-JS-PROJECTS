@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: white;
+    width: 15dvw;
+    min-height: 90dvh;
+}
+
+header a {
+    text-decoration: none;
+    color: rgb(111, 108, 108);
+    font-family: Arial;
+    font-size: 1rem;
+}
