@@ -3,17 +3,12 @@ import Header from "../Components/Header";
 import InputField from "../Components/InputField";
 import Button from "../Components/Button";
 import "./V6Calculator.css";
+import { useCallback } from "react";
 
 export default function V6Calculator() {
     const [ipV6, setIpV6] = useState({
-        firstSlot: 0, 
-        secondSlot: 0, 
-        thirdSlot: 0, 
-        fourthSlot: 0, 
-        fifthSlot: 0,
-        sixthSlot: 0,
-        seventhSlot: 0,
-        eighthSlot: 0
+        firstSlot: "", secondSlot: "", thirdSlot: "", fourthSlot: "", 
+        fifthSlot: "", sixthSlot: "", seventhSlot: "", eighthSlot: ""
     });
     const [result, setResult] = useState({
         decimalIpNetwork: "",
@@ -22,8 +17,17 @@ export default function V6Calculator() {
     });
     const [showResult, setShowResult] = useState(false);
 
+    const handleInputs = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setIpV6((ip) => { return { ...ip, [name]: value } } );
+    }
+
     const v6ToOther = useMemo(() => {
-        const { firstSlot, secondSlot, thirdSlot, fourthSlot, fifthSlot, sixthSlot, seventhSlot, eighthSlot } = ipV6;
+        const { 
+            firstSlot, secondSlot, thirdSlot, fourthSlot, 
+            fifthSlot, sixthSlot, seventhSlot, eighthSlot 
+        } = ipV6;
 
         const firstHexa = Number(firstSlot).toString(16).toUpperCase();
         const secondHexa = Number(secondSlot).toString(16).toUpperCase();
@@ -34,20 +38,20 @@ export default function V6Calculator() {
         const seventhHexa = Number(seventhSlot).toString(16).toUpperCase();
         const eighthHexa = Number(eighthSlot).toString(16).toUpperCase();
 
-        const firstBinary = Number(firstSlot).toString(16).padStart(8,0);
-        const secondBinary = Number(secondSlot).toString(16).padStart(8,0);
-        const thirdBinary = Number(thirdSlot).toString(16).padStart(8,0);
-        const fourthBinary = Number(fourthSlot).toString(16).padStart(8,0);
-        const fifthBinary = Number(fifthSlot).toString(16).padStart(8,0);
-        const sixthBinary = Number(sixthSlot).toString(16).padStart(8,0);
-        const seventhBinary = Number(seventhSlot).toString(16).padStart(8,0);
-        const eighthBinary = Number(eighthSlot).toString(16).padStart(8,0);
+        const firstBinary = Number(firstSlot).toString(2).padStart(8,0);
+        const secondBinary = Number(secondSlot).toString(2).padStart(8,0);
+        const thirdBinary = Number(thirdSlot).toString(2).padStart(8,0);
+        const fourthBinary = Number(fourthSlot).toString(2).padStart(8,0);
+        const fifthBinary = Number(fifthSlot).toString(2).padStart(8,0);
+        const sixthBinary = Number(sixthSlot).toString(2).padStart(8,0);
+        const seventhBinary = Number(seventhSlot).toString(2).padStart(8,0);
+        const eighthBinary = Number(eighthSlot).toString(2).padStart(8,0);
 
         const decimal = `${firstSlot}.${secondSlot}.${thirdSlot}.${fourthSlot}.
         ${fifthSlot}.${sixthSlot}.${seventhSlot}.${eighthSlot}`;
 
-        const hexa = `${firstHexa}${secondHexa}.${thirdHexa}${fourthHexa}.${fifthHexa}.
-        ${sixthHexa}.${seventhHexa}${eighthHexa}`;
+        const hexa = `${firstHexa}.${secondHexa}.${thirdHexa}.${fourthHexa}.${fifthHexa}.
+        ${sixthHexa}.${seventhHexa}.${eighthHexa}`;
 
         const binary = `${firstBinary}.${secondBinary}.${thirdBinary}.${fourthBinary}.
         ${fifthBinary}.${sixthBinary}.${seventhBinary}.${eighthBinary}`;
@@ -55,13 +59,16 @@ export default function V6Calculator() {
         return { decimal, hexa, binary }
     }, [ipV6]);
 
-    const handleInputs = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setIpV6((ip) => { return { ...ip, [name]: value } } );
-    }
+    const resetAct = useCallback(() => {
+        setShowResult(false);
+        setResult({
+            decimalIpNetwork: "",
+            hexaIpNetwork: "",
+            binaryIpNetwork: "",
+        });
+    }, [ipV6])
 
-    const countIp = (event) => {
+    const changeIpType = useCallback((event) => {
         event.preventDefault();
         const { 
             firstSlot, secondSlot, thirdSlot, fourthSlot, 
@@ -80,6 +87,10 @@ export default function V6Calculator() {
 
         if (v6Component.every(v6 => v6 >= 0 && v6 < 65536 )) {
             setShowResult(true);
+            setIpV6({
+                firstSlot: "", secondSlot: "", thirdSlot: "", fourthSlot: "", 
+                fifthSlot: "", sixthSlot: "", seventhSlot: "", eighthSlot: ""
+            });
             setResult({
                 decimalIpNetwork: v6ToOther.decimal,
                 hexaIpNetwork: v6ToOther.hexa,
@@ -89,7 +100,7 @@ export default function V6Calculator() {
         else {
             alert("Please enter the valid ip");
         }
-    }
+    }, [ipV6]);
 
     return (
         <div className="v6">
@@ -98,39 +109,43 @@ export default function V6Calculator() {
                 <form title="ip-calculator-v6">
                     <InputField
                         id={"slot-1"} name={"firstSlot"} placeholder={"enter numbers..."}
-                        type={"text"} length={5} onChange={handleInputs}
+                        type={"text"} length={5} onChange={handleInputs} value={ipV6.firstSlot}
                     />
                     <InputField
                         id={"slot-2"} name={"secondSlot"} placeholder={"enter numbers..."}
-                        type={"text"} length={5} onChange={handleInputs}
+                        type={"text"} length={5} onChange={handleInputs} value={ipV6.secondSlot}
                     />
                     <InputField
                         id={"slot-3"} name={"thirdSlot"} placeholder={"enter numbers..."}
-                        type={"text"} length={5} onChange={handleInputs}
+                        type={"text"} length={5} onChange={handleInputs} value={ipV6.thirdSlot}
                     />
                     <InputField
                         id={"slot-4"} name={"fourthSlot"} placeholder={"enter numbers..."}
-                        type={"text"} length={5} onChange={handleInputs}
+                        type={"text"} length={5} onChange={handleInputs} value={ipV6.fourthSlot}
                     />
                     <InputField
                         id={"slot-5"} name={"fifthSlot"} placeholder={"enter numbers..."}
-                        type={"text"} length={5} onChange={handleInputs}
+                        type={"text"} length={5} onChange={handleInputs} value={ipV6.fifthSlot}
                     />
                     <InputField
                         id={"slot-6"} name={"sixthSlot"} placeholder={"enter numbers..."}
-                        type={"text"} length={5} onChange={handleInputs}
+                        type={"text"} length={5} onChange={handleInputs} value={ipV6.sixthSlot}
                     />
                     <InputField
                         id={"slot-7"} name={"seventhSlot"} placeholder={"enter numbers..."}
-                        type={"text"} length={5} onChange={handleInputs}
+                        type={"text"} length={5} onChange={handleInputs} value={ipV6.seventhSlot}
                     />
                     <InputField
                         id={"slot-8"} name={"eighthSlot"} placeholder={"enter numbers..."}
-                        type={"text"} length={5} onChange={handleInputs}
+                        type={"text"} length={5} onChange={handleInputs} value={ipV6.eighthSlot}
                     />
                     <Button 
                         text={"Calculate"} type={"submit"} className={"v6-submit"} 
-                        onClick={countIp}
+                        onClick={changeIpType}
+                    />
+                    <Button 
+                        text={"Reset"} type={"button"} className={"v6-reset"} 
+                        onClick={resetAct}
                     />
                 </form>
                 {showResult === true ?

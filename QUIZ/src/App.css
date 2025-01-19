@@ -41,13 +41,3 @@
 .quiz-wrap form[title="quiz"] .result .message {
     padding: 1rem 0 0 0;
 }
-
-/**/
-
-body[is-dark="yes"] .quiz-wrap {
-    color: skyblue;
-}
-
-body[is-dark="yes"] .quiz-wrap form[title="quiz"] :where(.content, .result) {
-    border: 1px solid skyblue;
-}

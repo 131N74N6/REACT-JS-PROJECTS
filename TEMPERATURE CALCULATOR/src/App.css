@@ -1,0 +1,73 @@
+.tempt-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+}
+
+.tempt-wrap form[name="temperature-converter"] {
+    font-family: Arial;
+    width: 310px;
+    height: 450px;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 8px rgb(117, 116, 116);
+}
+
+.tempt-wrap form[name="temperature-converter"] input {
+    font-family: Arial;
+    font-size: 1rem;
+    width: calc(310px - 1rem);
+    padding: 0.4rem;
+    outline: none;
+}
+
+.tempt-wrap form[name="temperature-converter"] .selector {
+    display: flex;
+    padding: 1rem 0 0 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tempt-wrap form[name="temperature-converter"] select {
+    outline: none;
+    width: 306px;
+    padding: 0.4rem;
+    font-family: Arial;
+    font-size: 1rem;
+}
+
+.tempt-wrap form[name="temperature-converter"] .controller {
+    padding: 1rem 0 0 0;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.controller {
+    padding: 1rem 0 0 0;
+}
+
+.tempt-wrap form[name="temperature-converter"] button[type="submit"] {
+    border: none;
+    background-color: midnightblue;
+    color: white;
+    padding: 0.4rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+}
+
+.tempt-wrap form[name="temperature-converter"] button[type="button"] {
+    border: none;
+    background-color: crimson;
+    color: white;
+    padding: 0.4rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+}
+
+.result {
+    padding: 1rem 0 0 0;
+}

@@ -1,4 +1,4 @@
-export default function InputField({ type, placeholder, length, id, onChange, name }) {
+export default function InputField({ type, placeholder, length, id, onChange, name, value }) {
     return (
         <div>
             <input 
@@ -7,6 +7,7 @@ export default function InputField({ type, placeholder, length, id, onChange, na
                 placeholder={placeholder} 
                 maxLength={length} 
                 id={id} 
+                value={value}
                 onChange={onChange} 
             />
         </div>

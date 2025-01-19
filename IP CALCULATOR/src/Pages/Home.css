@@ -1,11 +1,69 @@
 .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    min-height: 100dvh;
     font-family: Arial;
     font-size: 1.1rem;
-    min-height: 100dvh;
 }
 
-.home-content {
+.home .home-body {
+    width: 76dvw;
     background-color: white;
+    min-height: 90dvh;
     padding: 1rem;
-    width: 558px;
+    font-family: Arial;
+}
+
+.home .home-body h2 {
+    font-family:Arial;
+    font-size:32px;
+    color:darkblue;
+    letter-spacing:1px;
+    border-right:2px solid darkblue;
+    width:44%;
+    overflow:hidden;
+    white-space:nowrap;
+    animation:typing 2s steps(18), cursor 0.4s step-end infinite alternate;
+}
+
+@keyframes cursor{
+    50%{ border-color:transparent; }
+}
+
+@keyframes typing{
+    from { width: 0; }
+}
+
+@media (min-width: 800px) and (max-width: 1024px) {
+    .home .home-body {
+        width: 70dvw;
+    }
+}
+
+@media (min-width: 394px) and (max-width: 800px) {
+    .home {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.2rem;
+    }
+
+    .home .home-body {
+        width: 80dvw;
+    }
+}
+
+@media (max-width: 393px) {
+    .home {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.2rem;
+    }
+
+    .home .home-body {
+        width: 80dvw;
+    }
 }

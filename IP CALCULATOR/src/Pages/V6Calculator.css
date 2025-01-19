@@ -28,15 +28,63 @@ body {
 
 .v6 .v6-body form input {
     padding: 0.5rem;
+    outline: none;
     font-size: 1rem;
     border: 1px solid rgb(111, 108, 108);
 }
 
-.v6 .v6-body form button {
+.v6 .v6-body form button:nth-child(1) {
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: rgb(26, 78, 118);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.v6 .v6-body form button:nth-child(2) {
     padding: 0.5rem;
     font-size: 1rem;
     background-color: rgb(26, 118, 55);
     color: white;
     border: none;
     cursor: pointer;
+}
+
+.v6 .v6-body .v6-result {
+    padding: 0.5rem;
+}
+
+@media (min-width: 800px) and (max-width: 1024px) {
+    .v6 .v6-body {
+        width: 70dvw;
+    }
+}
+
+@media (min-width: 393px) and (max-width: 800px) {
+    .v6 {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.2rem;
+        min-height: 100dvh;
+    }
+
+    .v6 .v6-body {
+        width: 80dvw;
+    }
+}
+
+@media (max-width: 393px) {
+    .v6 {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.2rem;
+        min-height: 100dvh;
+    }
+
+    .v6 .v6-body {
+        width: 80dvw;
+    }
 }
